@@ -1,0 +1,107 @@
+
+-- component front:
+caption name:
+string title:
+string company-name:
+ftd.image-src logo:
+optional string contact-1:
+optional string contact-2:
+optional string email:
+optional string company-slogan:
+optional string website:
+
+-- ftd.column:
+width.fixed.px: 700
+height.fixed.px: 350
+background.image: $assets.files.assets.card-bg.jpg
+align-content: center
+padding.px: 16
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+
+-- ftd.text: $front.name
+role: $inherited.types.heading-large
+style: light
+
+-- ftd.text: $front.title
+role: $inherited.types.heading-tiny
+style: light
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 8
+margin-top.px: 32
+
+-- ftd.image:
+src: $front.logo
+
+-- ftd.text: $front.company-name
+role: $inherited.types.copy-regular
+style: semi-bold
+
+-- ftd.text: $front.company-slogan
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+border-top-width.px: 1
+border-color: $inherited.colors.border
+padding-vertical.px: 8
+margin-top.px: 42
+spacing.fixed.px: 16
+align-content: center
+
+-- ftd.row:
+if: { front.contact-1 != NULL }
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.text: &#9990;
+role: $inherited.types.copy-large
+
+-- ftd.text: $front.contact-1
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { front.contact-2 != NULL }
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.text: &#9990;
+role: $inherited.types.copy-large
+
+-- ftd.text: $front.contact-2
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { front.email != NULL }
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.text: &#9993;
+role: $inherited.types.copy-large
+
+-- ftd.text: $front.email
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { front.website != NULL }
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.text: &#9993;
+role: $inherited.types.copy-large
+
+-- ftd.text: $front.website
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: front

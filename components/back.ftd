@@ -1,0 +1,55 @@
+
+-- component back:
+string company-name:
+ftd.image-src logo:
+optional string company-slogan:
+optional string website:
+optional string address:
+
+-- ftd.column:
+width.fixed.px: 700
+height.fixed.px: 350
+background.image: $assets.files.assets.card-bg.jpg
+align-content: center
+padding.px: 16
+color: $inherited.colors.text
+role: $inherited.types.fine-print
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 8
+margin-top.px: 32
+
+-- ftd.image:
+src: $back.logo
+
+-- ftd.text: $back.company-name
+role: $inherited.types.copy-regular
+style: semi-bold
+
+-- ftd.text: $back.company-slogan
+
+-- ftd.text: $back.website
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+border-top-width.px: 1
+border-color: $inherited.colors.border
+padding-vertical.px: 8
+margin-top.px: 42
+spacing.fixed.px: 16
+align-content: center
+
+-- ftd.text: 
+role: $inherited.types.copy-regular
+
+$back.address
+
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: back
