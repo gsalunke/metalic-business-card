@@ -1,6 +1,8 @@
 -- import: fastn-community.github.io/business-card/docs
 -- import: fastn-community.github.io/business-card as lib
--- import:  __user_name__.github.io/__repo_name__
+-- import: gsalunke.github.io/metalic-business-card
+-- import: gsalunke.github.io/metalic-business-card/components/front
+-- import: gsalunke.github.io/metalic-business-card/components/back
 
 
 
@@ -9,11 +11,11 @@
 ;; This renders the default documentation
 
 -- docs.home-card:
-package-name: __repo_name__
-package-full-name: __user_name__.github.io/__repo_name__
-github: https://github.com/__user_name__/__repo_name__
-category: __user_name__.github.io/__repo_name__
-;; license-url: https://github.com/__user_name__/__repo_name__/blob/main/LICENSE
+package-name: metalic-business-card
+package-full-name: gsalunke.github.io/metalic-business-card
+github: https://github.com/gsalunke/metalic-business-card
+category: gsalunke.github.io/metalic-business-card
+;; license-url: https://github.com/gsalunke/metalic-business-card/blob/main/LICENSE
 
 
 
@@ -34,45 +36,29 @@ optional string address:
 optional string company-slogan:
 
 -- lib.display-card:
-;; Remove the comment below if your card is in portrait mode.
-;; Default value of landscape is `true`
 ;; landscape: false
 
 -- lib.display-card.front:
 
-;; =============================================================================
-;; ===============<IMPLEMENT THE FRONT SIDE OF BUSINESS CARD>===================
-;; =============================================================================
-
--- ftd.text: Implement the **FRONT** side of business card
-color: $inherited.colors.text
-background.solid: $inherited.colors.background.step-2
-width: fill-container
-height: fill-container
-text-align: center
-
-;; =============================================================================
-;; ================================== END ======================================
-;; =============================================================================
+-- front.front: $card.name
+title: $card.title
+company-name: $card.company-name
+company-slogan: $card.company-slogan
+logo: $card.logo
+contact-1: $card.contact-1
+contact-2: $card.contact-2
+email: $card.email
 
 -- end: lib.display-card.front
 
 -- lib.display-card.back:
 
-;; =============================================================================
-;; ===============<IMPLEMENT THE BACK SIDE OF BUSINESS CARD>===================
-;; =============================================================================
-
--- ftd.text: Implement the **BACK** side of business card
-color: $inherited.colors.text
-background.solid: $inherited.colors.background.step-2
-width: fill-container
-height: fill-container
-text-align: center
-
-;; =============================================================================
-;; ================================== END ======================================
-;; =============================================================================
+-- back.back:
+company-name: $card.company-name
+company-slogan: $card.company-slogan
+logo: $card.logo
+website: $card.website
+address: $card.address
 
 -- end: lib.display-card.back
 
